@@ -1,5 +1,6 @@
 #!/usr/bin/python
 from collections import Counter
+from itertools import combinations
 import time
 
 
@@ -8,7 +9,7 @@ with open('/Users/marcus/Documents/advent/adventofcode_2018/day_2/input.txt') as
     boxes = file.readlines()
 boxes = map(lambda x: x.replace('\n', ''), boxes)
 
-#boxes = ['abcde','fghij','klmno','pqrst','fguij','axcye','wvxyz']
+boxes = ['abcde','fghij','klmno','pqrst','fguij','axcye','wvxyz']
 
 def part1():
     global boxes
@@ -46,5 +47,5 @@ start_time = time.time()
 part1()
 print("Execution on part 1:  %s seconds ---" % (time.time() - start_time))
 part2()
-tart_time = time.time()
+start_time = time.time()
 print("Execution on part 2:  %s seconds ---" % (time.time() - start_time))
