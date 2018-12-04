@@ -9,7 +9,7 @@ with open('/Users/marcus/Documents/advent/adventofcode_2018/day_2/input.txt') as
     boxes = file.readlines()
 boxes = map(lambda x: x.replace('\n', ''), boxes)
 
-boxes = ['abcde','fghij','klmno','pqrst','fguij','axcye','wvxyz']
+#boxes = ['abcde','fghij','klmno','pqrst','fguij','axcye','wvxyz']
 
 def part1():
     global boxes
@@ -24,8 +24,15 @@ def part1():
 
 
 def part2():
-    start = 1
-    for box in boxes:
+    for s1,s2 in combinations(boxes, 2):
+        diffs = [i for i in xrange(len(s1)) if s1[i] != s2[i]] 
+        if len(diffs) == 1:
+            print ''.join([s1[i] for i in xrange(len(s1)) if i  != diffs[0]])
+            
+
+    #for box in boxes:
+
+    """
         i = start
         while i < len(boxes):
             comp = boxes[i]
@@ -42,6 +49,7 @@ def part2():
                 print "The common letters are: %s " % result
             i += 1
         start += 1
+    """
 
 start_time = time.time()
 part1()
