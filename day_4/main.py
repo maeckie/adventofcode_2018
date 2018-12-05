@@ -5,7 +5,7 @@ import datetime
 import time
 
 
-with open('/Users/marcus/Documents/advent/adventofcode_2018/day_4/input.txt') as file:
+with open('/Users/marcus/Documents/advent/adventofcode_2018/day_4/gute_input.txt') as file:
     input = file.readlines()
 
 input = map(lambda x: x.replace('\n', ''), input)
