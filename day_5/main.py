@@ -58,6 +58,16 @@ def part2():
 #part1()
 #print("Execution on part 1:  %s seconds ---" % (time.time() - start_time))
 
-start_time = time.time()
-part2()
-print("Execution on part 2:  %s seconds ---" % (time.time() - start_time))
+#start_time = time.time()
+#part2()
+#print("Execution on part 2:  %s seconds ---" % (time.time() - start_time))
+res = input[0]
+#print test_input[-1:]
+for i in range(1, len(input)):
+    if abs(ord(input[i]) - ord(res[-1:])) != 32:
+        res = res + input[i]
+    else:
+        res = res[:-1]
+    
+print res
+#print [res + = test_input[i]) for i in range(0, len(test_input)-1) if (abs(ord(test_input[i]) - ord(test_input[i+1])) != 32) and (abs(ord(test_input[i]) - ord(res[-1:])) != 32)]
