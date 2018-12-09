@@ -26,15 +26,12 @@ def inf_candidate(x,y,start_stop):
         return True
     return False
 
-def calculate_point(x,y,coord, start_stop):
+def calculate_point(x,y,coord):
     global inf_cand
     closest = {}
     for c in coord:
-        shortest = 10000000    
-        distance = abs(c[0] - x) + abs(c[1] - y)
-        if distance < shortest:
-            shortest = distance
-        closest[c] = shortest
+        closest[c] = abs(c[0] - x) + abs(c[1] - y)
+
     m = min(closest.values())
     if closest.values().count(m) > 1:
         return None
@@ -49,7 +46,7 @@ def part1(coords):
     area_map = {}
     for x in range(start_stop[0][0], start_stop[0][1]+1):
         for y in range(start_stop[1][0], start_stop[1][1]+1):
-            p = calculate_point(x,y,coords, start_stop)
+            p = calculate_point(x,y,coords)
             if p is not None:
                 if area_map.has_key(p): 
                     area_map[p] += 1
